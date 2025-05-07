@@ -1,8 +1,0 @@
-﻿{
-  "LdapHost": "ldap2.it-college.ru",
-  "LdapPort": 389,
-  "LdapBaseDN": "dc=it-college,dc=ru",
-
-  "DataBaseConnect": "Host=localhost;Database=itcollegebot;Username=admin;Password=admin"
-  
-}
