@@ -1,8 +1,0 @@
-﻿{
-  "Host": "ldap2.it-college.ru",
-  "Port": "389",
-  "BaseDC": "dc=it-college,dc=ru"
-  
-  
-  
-}
