@@ -15,6 +15,9 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         
+        // Проверка на подгрузку конфигурации
+        builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        
         // Добавляем CORS
         builder.Services.AddCors(options =>
         {
@@ -35,7 +38,6 @@ public class Program
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API Name", Version = "v1" });
             
-            // что то новое ??
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 In = ParameterLocation.Header,
@@ -62,9 +64,12 @@ public class Program
         });
         
         // JWT
-        var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+        var jwtSettings = builder.Configuration.GetSection("Jwt");
         var secretKey = jwtSettings["SecretKey"];
 
+        if (string.IsNullOrEmpty(secretKey))
+            throw new ArgumentException("Secret key cannot be null or empty.", nameof(secretKey));
+        
         builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -74,16 +79,16 @@ public class Program
             .AddJwtBearer(options =>
             {
                 options.SaveToken = true;
-                options.RequireHttpsMetadata = false; // Только для разработки! В production всегда используйте HTTPS
+                options.RequireHttpsMetadata = false; // Только для разработки!
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                                    ValidateIssuer = true,          // Проверка издателя токена
+                    ValidateIssuer = true,          // Проверка издателя токена
                     ValidateAudience = true,        // Проверка получателя токена
-                    ValidAudience = jwtSettings["ValidAudience"],  // Укажите здесь вашего получателя (например, название вашего приложения)
-                    ValidIssuer = jwtSettings["ValidIssuer"],      // Укажите здесь вашего издателя (обычно URL вашего API)
+                    ValidAudience = jwtSettings["ValidAudience"],
+                    ValidIssuer = jwtSettings["ValidIssuer"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey!)), // Ключ для подписи
                     ValidateLifetime = true,          // Проверка времени жизни токена
-                    ClockSkew = TimeSpan.Zero         // Установите в Zero, чтобы не было проблем с разницей во времени
+                    ClockSkew = TimeSpan.Zero
                 };
             });
 
@@ -100,6 +105,8 @@ public class Program
         builder.Services.AddScoped<ResulteventService>();
         builder.Services.AddScoped<TypeEventService>();
         
+        // LDAP
+        builder.Services.Configure<LdapSettings>(builder.Configuration.GetSection("LDAP"));
         builder.Services.AddScoped<LdapService>();
         
         var app = builder.Build();
@@ -112,10 +119,10 @@ public class Program
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API Name v1");
             });
         }
-
+        
         // Прослушиваем все адресса. todo Расскомитить при билде !!!!!
-        //app.Urls.Add("http://0.0.0.0:3000"); // Замените 5288 на ваш порт
-        //app.Urls.Add("https://0.0.0.0:3001"); // Замените 7190 на ваш HTTPS порт
+        app.Urls.Add("http://0.0.0.0:3000"); // Замените 5288 на ваш порт
+        app.Urls.Add("https://0.0.0.0:3001"); // Замените 7190 на ваш HTTPS порт
         
         //app.UseHttpsRedirection();
 
