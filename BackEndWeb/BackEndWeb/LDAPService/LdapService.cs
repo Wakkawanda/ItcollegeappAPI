@@ -3,21 +3,33 @@ using System.Text.RegularExpressions;
 using BackEndWeb.Controller.Model.Acceptance.FilterModel;
 using BackEndWeb.Controller.Model.Acceptance.LoginModel;
 using BackEndWeb.Controller.Model.Sending.UserModel;
+using Microsoft.Extensions.Options;
 
 namespace BackEndWeb.LDAPService;
 
 public class LdapService
 {
-    public string Host = "ldap2.it-college.ru";
+    private readonly LdapSettings _ldapSettings;
+    public LdapService(IOptions<LdapSettings> ldapSettings)
+    {
+        _ldapSettings = ldapSettings.Value ?? throw new ArgumentNullException(nameof(ldapSettings), "LdapSettings cannot be null.");
+        
+        // Обработчики ошибок
+        if (string.IsNullOrEmpty(_ldapSettings.Host))
+            throw new ArgumentException("LDAP Host cannot be null or empty.", nameof(_ldapSettings.Host));
+
+        if (string.IsNullOrEmpty(_ldapSettings.BaseDc))
+            throw new ArgumentException("LDAP BaseDc cannot be null or empty.", nameof(_ldapSettings.BaseDc));
+    }
     
     public LdapConnection? LdapConnect(string? userName, string? password) // Создание + Проверка подключение к LDAP
     {
-        string dn = $"uid={userName},ou=People,dc=it-college,dc=ru"; // DN пользователя для подключения
+        string dn = $"uid={userName},ou=People,{_ldapSettings.BaseDc}"; // DN пользователя для подключения
         
-        LdapConnection connection = new LdapConnection(new LdapDirectoryIdentifier(Host, 389));
+        LdapConnection connection = new LdapConnection(new LdapDirectoryIdentifier(_ldapSettings.Host, _ldapSettings.Port));
         connection.Credential = new System.Net.NetworkCredential(dn, password);
         connection.AuthType = AuthType.Basic;
-        connection.SessionOptions.ProtocolVersion = 3;
+        connection.SessionOptions.ProtocolVersion = _ldapSettings.ProtocolVersion;
         
         try
         {
@@ -35,7 +47,7 @@ public class LdapService
     {
         List<UserModel> users = new List<UserModel>();
 
-        string filter = $"(&(objectClass=inetOrgPerson)(memberOf=cn={request.Filter},ou=groups,dc=it-college,dc=ru))";
+        string filter = $"(&(objectClass=inetOrgPerson)(memberOf=cn={request.Filter},ou=groups,{_ldapSettings.BaseDc}))";
 
         try
         {
@@ -45,7 +57,7 @@ public class LdapService
                 if (connection == null) return null; 
                 
                 SearchRequest searchRequest = new SearchRequest(
-                    "ou=People,dc=it-college,dc=ru",
+                    $"ou=People,{_ldapSettings.BaseDc}",
                     filter,
                     SearchScope.Subtree,
                     new string[] { "uid", "cn" }
@@ -92,7 +104,7 @@ public class LdapService
                 if (connection == null) return null;
 
                 SearchRequest searchRequest = new SearchRequest(
-                    $"uid={request.Username},ou=People,dc=it-college,dc=ru",
+                    $"uid={request.Username},ou=People,{_ldapSettings.BaseDc}",
                     "(objectClass=*)",
                     SearchScope.Base,
                     "cn", "memberOf"

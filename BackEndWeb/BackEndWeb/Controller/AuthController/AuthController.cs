@@ -52,7 +52,7 @@ public class AuthController : ControllerBase
 
     private string GenerateJwtToken(string? uid)
     {
-        var jwtSettings = _configuration.GetSection("JwtSettings");
+        var jwtSettings = _configuration.GetSection("Jwt");
         var secretKey = jwtSettings["SecretKey"];
         var issuer = jwtSettings["ValidIssuer"];
         var audience = jwtSettings["ValidAudience"];
@@ -63,15 +63,15 @@ public class AuthController : ControllerBase
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, uid), // ID пользователя
-            new Claim(ClaimTypes.Email, "test@example.com"),  // пример Email
-            new Claim(ClaimTypes.Role, "User")               // пример роли пользователя
+            new Claim(ClaimTypes.Email, "test@example.com"),
+            new Claim(ClaimTypes.Role, "User")
         };
         
         var token = new JwtSecurityToken(
-            issuer: issuer,       // Издатель
-            audience: audience,     // Получатель
-            claims: claims,         // Утверждения
-            expires: DateTime.Now.AddMinutes(1), // Время жизни токена (например, 30 минут)
+            issuer: issuer,
+            audience: audience,
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(30),
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);

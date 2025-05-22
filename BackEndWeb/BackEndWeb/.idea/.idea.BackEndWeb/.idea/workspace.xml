@@ -10,49 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4995594-b870-47b5-be27-058581a2bc19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/BaseController/BaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/CompanyController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/EventController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/EventassignmentsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/ReporteventController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/ResulteventController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/DBController/TypeEventController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/CompanyView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/EventView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/EventassignmentsView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/ReporteventView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/ResulteventView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Model/ViewModels/TypeeventView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/Base/BaseService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/Base/IBaseService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/CompanyService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/EventService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/EventassignmentsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/ReporteventService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/ResulteventService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBaseService/Service/TypeEventService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/.idea/.idea.ConsoleApp1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/.idea/.idea.ConsoleApp1/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/.idea/.idea.ConsoleApp1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/ConsoleApp1/Model/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/ConsoleApp1/Model/car.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ConsoleApp1/ConsoleApp1/test.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Trening/Trening/DBModel/DBModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Trening/Trening/DBModel/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEndWeb.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BackEndWeb.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LDAPService/LdapSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BackEndWeb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BackEndWeb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/AuthController/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/AuthController/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/PostRequest/PostRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBaseController/DbConnection/DbConnection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LDAPService/LDAPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LDAPService/LdapService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataAcceptanceModel/FilterModel/FilterModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Model/Acceptance/FilterModel/FilterModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataAcceptanceModel/LoginModel/LoginModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Model/Acceptance/LoginModel/LoginModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataBaseModels/CompanyModel/CompanyModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataBaseModels/EventAssignmentsModel/EventAssignmentsModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataBaseModels/EventModel/EventModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataBaseModels/TypeEvent/TypeEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DataSendingModel/UserModel/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Model/Sending/UserModel/UserModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseService/DBContext/Itcollegeapp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataBaseService/DBContext/Itcollegeapp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LDAPService/LdapService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LDAPService/LdapService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SettingsApp/Settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SettingsApp/SettingsApp.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Settings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +34,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45630cf4483c452baedc1386b464839e26908/e2/0d28b26e/AuthenticationServiceCollectionExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8cb9946248bfcad4b36702692bd3d6840d8734da3eb622bb2b4a680701172ec/Boolean.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -76,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.BackEndWeb: IIS Express.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Inspections-ASP.NET",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.BackEndWeb: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;v2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Inspections-ASP.NET&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BackEndWeb: IIS Express">
     <configuration name="BackEndWeb: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BackEndWeb.csproj" />
@@ -158,12 +128,16 @@
       <workItem from="1746433272196" duration="12792000" />
       <workItem from="1746519139543" duration="18408000" />
       <workItem from="1746608936293" duration="10956000" />
+      <workItem from="1747686814448" duration="1314000" />
+      <workItem from="1747829661372" duration="9859000" />
+      <workItem from="1747903861325" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
